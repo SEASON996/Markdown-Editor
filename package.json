@@ -15,6 +15,14 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "@codemirror/lang-markdown": "^6.5.0",
+    "@codemirror/language": "^6.12.3",
+    "@lezer/highlight": "^1.2.3",
+    "codemirror": "^6.0.2",
+    "dompurify": "^3.4.0",
+    "github-markdown-css": "^5.9.0",
+    "marked": "^18.0.1",
+    "normalize.css": "^8.0.1",
     "pinia": "^3.0.4",
     "vue": "^3.5.31",
     "vue-router": "^5.0.4"

@@ -1,0 +1,46 @@
+:root {
+  /* 浅色模式 */
+  --bg-preview: rgb(255, 255, 255);
+  --bg-statusbar: rgb(255, 255, 255);
+
+  --bg-navbar: rgb(248, 250, 252);
+  --bg-sidebar: rgb(241, 245, 249);
+  --bg-editor: rgb(248, 250, 252);
+
+  --text-sidebar: rgb(82, 82, 82);
+  --text-statusbar: rgb(100, 116, 139);
+  --text-editor: rgb(51, 65, 85);
+
+  --border-color: rgb(227, 233, 241);
+  --caret-color: rgb(51, 65, 85);
+  --bg-selection: rgb(217, 249, 157);
+
+  --icon-hover: rgb(#e9eef4);
+  --icon-active: rgb(255, 255, 255);
+}
+
+[data-theme='dark'] {
+  /* 预览和状态栏通常是最醒目的区域 */
+  --bg-preview: rgb(24, 24, 27); /* 对应浅色的 255 */
+  --bg-statusbar: rgb(24, 24, 27);
+
+  /* 编辑器和导航栏次之 */
+  --bg-navbar: rgb(18, 18, 20); /* 对应浅色的 248 */
+  --bg-editor: rgb(18, 18, 20);
+
+  /* 侧边栏通常作为基底 */
+  --bg-sidebar: rgb(9, 9, 11); /* 对应浅色的 241 */
+
+  /* 文字颜色反转 */
+  --text-sidebar: rgb(161, 161, 170);
+  --text-editor: rgb(212, 212, 216);
+  --text-statusbar: rgb(113, 113, 122);
+
+  /* 边框要变暗，但不能消失 */
+  --border-color: rgb(39, 39, 42);
+  --caret-color: rgb(255, 255, 255);
+  --bg-selection: rgba(34, 197, 94, 0.3);
+
+  --icon-hover: rgb(55, 55, 55);
+  --icon-active: rgb(75, 75, 75);
+}

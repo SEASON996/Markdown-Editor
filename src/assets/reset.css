@@ -1,0 +1,94 @@
+/* src/styles/reset.css */
+
+/* 1. 盒模型统一为 border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. 移除默认的 margin 和 padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. 让标题、段落等块级元素默认无额外间距 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+/* 4. 列表去掉默认样式（圆点、编号） */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 5. 链接去掉下划线，并继承颜色 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 6. 按钮、输入框等表单元素继承字体，去掉默认边框/背景 */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* 7. 按钮默认显示为指针，且无边框 */
+button {
+  cursor: pointer;
+}
+
+/* 8. 图片、视频等媒体元素块级化，避免底部留白 */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 9. 表格边框合并，单元格默认无内边距（可按需调整） */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 10. 引用样式取消斜体（可选） */
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+}
