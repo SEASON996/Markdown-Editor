@@ -37,6 +37,9 @@ watch(
   height: 100%;
   overflow-y: auto;
   background-color: var(--bg-preview);
+  /* 滚动条样式：滚动条宽度，滚动条滑块和轨道的颜色 */
+  scrollbar-width: thin;
+  scrollbar-color: #808080 var(--bg-preview);
 }
 .preview-content {
   padding: 48px;
@@ -48,8 +51,7 @@ watch(
 }
 .markdown-body :deep(p),
 .markdown-body :deep(li) {
-  line-height: 1.8; /* 调整为你喜欢的倍数 */
-  margin-bottom: 1.2em; /* 适当增加段落间距 */
+  line-height: 1.8;
 }
 
 .markdown-body[data-theme='dark'] {

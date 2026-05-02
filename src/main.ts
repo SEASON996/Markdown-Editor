@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import 'normalize.css'
+
 import '@/assets/reset.css'
 import '@/assets/base.css'
 import App from './App.vue'

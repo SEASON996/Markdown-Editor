@@ -66,7 +66,6 @@ const isVisible = ref(true)
 .side-bar {
   display: flex;
   height: 100%;
-  border-right: 1px solid var(--border-color);
   background-color: var(--bg-sidebar);
 }
 .left {
@@ -126,6 +125,7 @@ const isVisible = ref(true)
   gap: 8px;
   width: clamp(160px, 24vw, 320px);
   padding: 12px 12px 0;
+  border-right: 1px solid var(--border-color);
 }
 .file-info {
   height: 60px;
@@ -202,7 +202,7 @@ const isVisible = ref(true)
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.6em; /* 使用 em 可以随字号自动缩放 */
-  height: 1.6em;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 </style>

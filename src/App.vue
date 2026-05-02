@@ -5,6 +5,7 @@ import ToolBar from './components/ToolBar/ToolBar.vue'
 import MarkdownEditor from './components/Editor/MarkdownEditor.vue'
 import MarkdownPreview from './components/Preview/MarkdownPreview.vue'
 import StatusBar from './components/StatusBar/StatusBar.vue'
+
 import { useThemeStore } from './stores/theme'
 import { ref, onBeforeMount } from 'vue'
 import type { PreviewMode } from '@/types'
@@ -12,9 +13,50 @@ const themeStore = useThemeStore()
 onBeforeMount(() => {
   themeStore.initTheme()
 })
+// 预览模式
 const previewMode = ref<PreviewMode>('split')
 const setPreviewMode = (mode: PreviewMode) => {
   previewMode.value = mode
+}
+
+const editorRef = ref<InstanceType<typeof MarkdownEditor> | null>(null)
+const handleToolBarAction = (type: string) => {
+  switch (type) {
+    case 'bold':
+      editorRef.value?.toggleBold()
+      break
+    case 'italic': {
+      editorRef.value?.toggleItalic()
+      break
+    }
+    case 'strike': {
+      editorRef.value?.toggleStrikethrough()
+      break
+    }
+    case 'code': {
+      editorRef.value?.toggleCode()
+      break
+    }
+    case 'quote': {
+      editorRef.value?.toggleQuote()
+      break
+    }
+    case 'unorderedList': {
+      editorRef.value?.toggleUnorderedList()
+      break
+    }
+    case 'orderedList': {
+      editorRef.value?.toggleOrderedList()
+      break
+    }
+    case 'undo': {
+      editorRef.value?.undoContent()
+      break
+    }
+    case 'redo': {
+      editorRef.value?.redoContent()
+    }
+  }
 }
 </script>
 
@@ -26,9 +68,13 @@ const setPreviewMode = (mode: PreviewMode) => {
         <SideBar></SideBar>
       </div>
       <div class="main-right">
-        <ToolBar :previewMode="previewMode" @update:previewMode="setPreviewMode"></ToolBar>
+        <ToolBar
+          :previewMode="previewMode"
+          @update:previewMode="setPreviewMode"
+          @on-action="handleToolBarAction"
+        ></ToolBar>
         <div class="editor-preview">
-          <MarkdownEditor v-show="previewMode !== 'read'"></MarkdownEditor>
+          <MarkdownEditor ref="editorRef" v-show="previewMode !== 'read'"></MarkdownEditor>
           <MarkdownPreview v-show="previewMode !== 'edit'"></MarkdownPreview>
         </div>
         <StatusBar></StatusBar>
