@@ -1,23 +1,48 @@
 <script setup lang="ts">
 import 'github-markdown-css/github-markdown.css'
+import '@/assets/github-highlight.css'
+
 import { ref, watch } from 'vue'
-import { marked } from 'marked'
+import { Marked } from 'marked'
+import { markedHighlight } from 'marked-highlight'
+import hljs from 'highlight.js'
 import DOMPurify from 'dompurify'
+
 import { useFileStore } from '@/stores/file'
 import { useThemeStore } from '@/stores/theme'
+import { debounce } from '@/utils/debounce'
+
 const fileStore = useFileStore()
 const themeStore = useThemeStore()
 
 const htmlContent = ref('')
+
+const marked = new Marked(
+  markedHighlight({
+    emptyLangClass: 'hljs',
+    langPrefix: 'hljs language-',
+    highlight(code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext'
+      return hljs.highlight(code, { language }).value
+    },
+  }),
+)
+
+const updatePreview = async (content: string) => {
+  if (!content) {
+    htmlContent.value = ''
+    return
+  }
+  const rawHtml = await marked.parse(content)
+  htmlContent.value = DOMPurify.sanitize(rawHtml)
+}
+
+const debouncedUpdate = debounce(updatePreview, 300)
+
 watch(
   () => fileStore.content,
-  async (newContent) => {
-    if (newContent) {
-      const rawHtml = await marked.parse(newContent)
-      htmlContent.value = DOMPurify.sanitize(rawHtml)
-    } else {
-      htmlContent.value = ''
-    }
+  (newContent) => {
+    debouncedUpdate(newContent)
   },
   { immediate: true },
 )
@@ -39,7 +64,7 @@ watch(
   background-color: var(--bg-preview);
   /* 滚动条样式：滚动条宽度，滚动条滑块和轨道的颜色 */
   scrollbar-width: thin;
-  scrollbar-color: #808080 var(--bg-preview);
+  scrollbar-color: var(--scroll-thumb) var(--bg-preview);
 }
 .preview-content {
   padding: 48px;

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import NavBar from './components/NavBar/NavBar.vue'
 import SideBar from './components/SideBar/SideBar.vue'
-import ToolBar from './components/ToolBar/ToolBar.vue'
+import ToolBar from '@/components/ToolBar/ToolBar.vue'
 import MarkdownEditor from './components/Editor/MarkdownEditor.vue'
 import MarkdownPreview from './components/Preview/MarkdownPreview.vue'
-import StatusBar from './components/StatusBar/StatusBar.vue'
+import StatusBar from '@/components/StatusBar/StatusBar.vue'
 
 import { useThemeStore } from './stores/theme'
 import { ref, onBeforeMount } from 'vue'

@@ -2,12 +2,12 @@
   /* 浅色模式 */
   --bg-preview: rgb(255, 255, 255);
   --bg-statusbar: rgb(255, 255, 255);
-
   --bg-navbar: rgb(248, 250, 252);
   --bg-sidebar: rgb(241, 245, 249);
-  --bg-editor: rgb(248, 250, 252);
+  --bg-editor: rgb(253, 253, 254);
 
   --text-sidebar: rgb(82, 82, 82);
+  --text-toolbar: rgb(71, 85, 105);
   --text-statusbar: rgb(100, 116, 139);
   --text-editor: rgb(51, 65, 85);
 
@@ -17,30 +17,79 @@
 
   --icon-hover: rgb(#e9eef4);
   --icon-active: rgb(255, 255, 255);
+
+  /* 滚动条 */
+  --scroll-thumb: rgba(0, 0, 0, 0.15);
+  --scroll-thumb-hover: rgba(0, 0, 0, 0.25);
+
+  /* 与代码高亮有关的CSS变量，对应原 github.css（浅色模式）*/
+  /* 基础颜色 */
+  --hljs-color: #24292e;
+  --hljs-bg: #ffffff;
+
+  /* 语法类别颜色 */
+  --hljs-keyword: #d73a49; /* 关键字、标签模板等 */
+  --hljs-entity: #6f42c1; /* 函数名、类名等实体 */
+  --hljs-constant: #005cc5; /* 常量、属性、数字、操作符等 */
+  --hljs-string: #032f62; /* 字符串与正则 */
+  --hljs-builtin: #e36209; /* 内置函数/变量、符号 */
+  --hljs-comment: #6a737d; /* 注释、代码块、公式 */
+  --hljs-tag: #22863a; /* 标签名、选择器标签等 */
+  --hljs-subst: #24292e; /* 替代文本（通常同基础色） */
+  --hljs-section: #005cc5; /* 标题（如Markdown标题） */
+  --hljs-bullet: #735c0f; /* 列表标记 */
+
+  /* 增删差异颜色 */
+  --hljs-addition-color: #22863a;
+  --hljs-addition-bg: #f0fff4;
+  --hljs-deletion-color: #b31d28;
+  --hljs-deletion-bg: #ffeef0;
 }
 
 [data-theme='dark'] {
-  /* 预览和状态栏通常是最醒目的区域 */
-  --bg-preview: rgb(24, 24, 27); /* 对应浅色的 255 */
-  --bg-statusbar: rgb(24, 24, 27);
+  /* 背景色 — 从最深到最浅 */
+  --bg-sidebar: rgb(10, 10, 12); /* 最底层，对应浅色 #f1f5f9 */
+  --bg-navbar: rgb(20, 20, 24); /* 导航栏，对应浅色 #f8fafc */
+  --bg-editor: rgb(22, 22, 26); /* 编辑器，对应浅色 #fdfdfe */
+  --bg-preview: rgb(28, 28, 32); /* 预览区最亮，对应浅色 #ffffff */
+  --bg-statusbar: rgb(28, 28, 32); /* 状态栏同预览区 */
 
-  /* 编辑器和导航栏次之 */
-  --bg-navbar: rgb(18, 18, 20); /* 对应浅色的 248 */
-  --bg-editor: rgb(18, 18, 20);
+  /* 文字颜色 — 亮度与浅色模式反转 */
+  --text-editor: rgb(235, 235, 240); /* 最亮，对应浅色 #334155 */
+  --text-toolbar: rgb(200, 210, 230); /* 柔和蓝灰，对应浅色 #475569 */
+  --text-statusbar: rgb(190, 200, 220); /* 稍暗，对应浅色 #64748b */
+  --text-sidebar: rgb(150, 150, 165); /* 侧边栏文字，对应浅色 #525252 */
 
-  /* 侧边栏通常作为基底 */
-  --bg-sidebar: rgb(9, 9, 11); /* 对应浅色的 241 */
+  /* 边框与光标 */
+  --border-color: rgb(45, 45, 52); /* 深色边框，对应浅色 #e3e9f1 */
+  --caret-color: rgb(255, 255, 255); /* 白色光标 */
+  --bg-selection: rgba(166, 226, 46, 0.25); /* 半透明草绿，对应浅色 #d9f99d */
 
-  /* 文字颜色反转 */
-  --text-sidebar: rgb(161, 161, 170);
-  --text-editor: rgb(212, 212, 216);
-  --text-statusbar: rgb(113, 113, 122);
+  /* 图标交互 */
+  --icon-hover: rgb(220, 230, 245); /* 浅蓝灰，悬停提亮 */
+  --icon-active: rgb(28, 28, 32); /* 纯白，最高对比 */
 
-  /* 边框要变暗，但不能消失 */
-  --border-color: rgb(39, 39, 42);
-  --caret-color: rgb(255, 255, 255);
-  --bg-selection: rgba(34, 197, 94, 0.3);
+  /* 滚动条 */
+  --scroll-thumb: rgba(255, 255, 255, 0.2);
+  --scroll-thumb-hover: rgba(255, 255, 255, 0.35);
 
-  --icon-hover: rgb(55, 55, 55);
-  --icon-active: rgb(75, 75, 75);
+  /* 与代码高亮有关的CSS变量，对应原 github-dark.css（深色模式）*/
+  --hljs-color: #c9d1d9;
+  --hljs-bg: #0d1117;
+
+  --hljs-keyword: #ff7b72;
+  --hljs-entity: #d2a8ff;
+  --hljs-constant: #79c0ff;
+  --hljs-string: #a5d6ff;
+  --hljs-builtin: #ffa657;
+  --hljs-comment: #8b949e;
+  --hljs-tag: #7ee787;
+  --hljs-subst: #c9d1d9;
+  --hljs-section: #1f6feb;
+  --hljs-bullet: #f2cc60;
+
+  --hljs-addition-color: #aff5b4;
+  --hljs-addition-bg: #033a16;
+  --hljs-deletion-color: #ffdcd7;
+  --hljs-deletion-bg: #67060c;
 }

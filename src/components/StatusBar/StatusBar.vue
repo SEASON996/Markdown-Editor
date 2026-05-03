@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFileStore } from '@/stores/file'
-import IconEncoding from '../icons/IconEncoding.vue'
-import IconKeyboard from '../icons/IconKeyboard.vue'
+import IconEncoding from '../icons/StatusBar/IconEncoding.vue'
+import IconKeyboard from '../icons/StatusBar/IconKeyboard.vue'
 const fileStore = useFileStore()
 </script>
 <template>

@@ -222,8 +222,19 @@ defineExpose({
   border-right: 1px solid var(--border-color);
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #808080 var(--bg-editor);
+  scrollbar-color: var(--scroll-thumb) var(--bg-editor);
 }
+/* .editor-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.editor-container::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 8px;
+}
+.editor-container::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+} */
 .editor-content {
   min-height: 0;
   padding: 40px;
