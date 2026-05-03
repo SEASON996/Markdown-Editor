@@ -2,12 +2,12 @@
 import 'github-markdown-css/github-markdown.css'
 import '@/assets/github-highlight.css'
 
-import { ref, watch } from 'vue'
 import { Marked } from 'marked'
 import { markedHighlight } from 'marked-highlight'
-import hljs from 'highlight.js'
+import hljs from '@/utils/highlight'
 import DOMPurify from 'dompurify'
 
+import { ref, watch } from 'vue'
 import { useFileStore } from '@/stores/file'
 import { useThemeStore } from '@/stores/theme'
 import { debounce } from '@/utils/debounce'
