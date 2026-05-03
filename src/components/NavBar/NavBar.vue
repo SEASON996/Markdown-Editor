@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import IconExport from '../icons/IconExport.vue'
 import IconShare from '../icons/IconShare.vue'
+const handleExport = () => {
+  window.print()
+}
 </script>
 
 <template>
@@ -8,7 +11,7 @@ import IconShare from '../icons/IconShare.vue'
     <span class="nav-title">Markdown Editor</span>
 
     <div class="nav-right">
-      <button class="export-btn">
+      <button class="export-btn" @click="handleExport">
         <IconExport></IconExport>
         <span> 导出</span>
       </button>

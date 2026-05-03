@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import IconFolder from '../icons/IconFolder.vue'
-import IconRecent from '../icons/IconRecent.vue'
-import IconPlus from '../icons/IconPlus.vue'
+import IconFolder from '@/components/icons/SideBar/IconFolder.vue'
+import IconRecent from '@/components/icons/SideBar/IconRecent.vue'
+import IconPlus from '@/components/icons/SideBar/IconPlus.vue'
 // import IconExpandRight from '../icons/IconExpandRight.vue'
-import IconSettings from '../icons/IconSettings.vue'
-import IconTheme from '../icons/IconTheme.vue'
+import IconSettings from '@/components/icons/SideBar/IconSettings.vue'
+import IconTheme from '@/components/icons/SideBar/IconTheme.vue'
 import { ref } from 'vue'
 import { useThemeStore } from '@/stores/theme'
 const themeStore = useThemeStore()

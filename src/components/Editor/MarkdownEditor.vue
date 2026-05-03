@@ -5,7 +5,6 @@ import { minimalSetup, EditorView } from 'codemirror'
 import { markdown } from '@codemirror/lang-markdown'
 import { undo, redo } from '@codemirror/commands'
 import { syntaxHighlighting, HighlightStyle } from '@codemirror/language'
-
 import { tags as t } from '@lezer/highlight'
 
 const fileStore = useFileStore()
@@ -236,6 +235,8 @@ defineExpose({
   background: var(--scroll-thumb-hover);
 } */
 .editor-content {
+  margin: 0 auto;
+  max-width: 960px;
   min-height: 0;
   padding: 40px;
 }
