@@ -24,6 +24,11 @@ export default defineConfig({
           minSize: 20000, // 小于 20kB 的模块不单独拆分
           groups: [
             {
+              name: 'markdown-renderer',
+              test: /node_modules[\\/](marked|highlight\.js|dompurify)[\\/]/,
+              priority: 25,
+            },
+            {
               name: 'codemirror-core',
               test: /node_modules[\\/](codemirror|@codemirror[\\/]commands|@codemirror[\\/]language)[\\/]/,
               priority: 20,
@@ -32,11 +37,6 @@ export default defineConfig({
               name: 'codemirror-markdown',
               test: /node_modules[\\/](@codemirror[\\/]lang-markdown|@lezer[\\/]highlight)[\\/]/,
               priority: 20,
-            },
-            {
-              name: 'markdown-renderer',
-              test: /node_modules[\\/](marked|highlight\.js|dompurify)[\\/]/,
-              priority: 25,
             },
             {
               name: 'vendor-common',
